@@ -1,0 +1,56 @@
+.searchItems{
+    margin-bottom: 16px;
+}
+.searchHot{
+	color: rgba(80, 80, 80, 1);
+	font-size: 15px;
+    text-align: left;
+    margin-left: 41px;
+    margin-bottom: 8px;
+}
+.hotwords{
+   
+	color: rgba(153, 164, 189, 1);
+	font-size: 14px;
+	line-height: 35px;
+    text-align: center;
+    display: flex;
+    align-items:center;
+    margin-left: 41px;
+    margin-bottom: 40px;
+    .hotItem{
+        width: 59px;
+        height: 35px;
+    }
+}
+.arctilelist{
+    margin-left: 13rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 27px;
+    .arcctleleft{
+        margin-right:38px;
+        .top{
+            color: rgba(80, 80, 80, 1);
+            font-size: 17px;
+           height:45px;
+           line-height:45px;
+            
+        }
+        .bottom{
+            color: rgba(153, 153, 153, 1);
+            font-size: 13px;
+            height:32px;
+            line-height:32px;
+            text-align: left;
+        }
+    }
+    .articleright{
+        Image{
+            width: 123rpx;
+            height: 78px;
+        }
+    }
+}
+
