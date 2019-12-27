@@ -1,0 +1,133 @@
+.square {
+box-sizing:border-box;
+  .top_talk {
+    display: flex;
+    margin-left: 21px;
+    justify-content: space-between;
+
+    .top_talk_left {
+   
+      display: flex;
+      .at-icon {
+        color: rgba(255, 195, 135, 1);
+        margin-bottom: 4px;
+      }
+
+      .top_talk_nums {
+        color: rgba(166, 166, 166, 1);
+        font-size: 14px;
+        text-align: center;
+      }
+    }
+
+    .top_talk_center {
+      font-size: 16px;
+      margin-left:14px;
+    }
+
+    .top_talk_right {
+      Image {
+        width: 74px;
+        height: 74px;
+      }
+    }
+  }
+
+  .contributor {
+    display: flex;
+    align-items: center;
+    margin-left: 57px;
+    margin-right: 17px;
+    justify-content: space-between;
+    margin-bottom: 17px;
+
+    .contributor_infos {
+      display: flex;
+      align-items: center;
+    }
+
+    Image {
+      width: 23px;
+      height: 23px;
+      border-radius: 50%;
+      margin-right: 16px;
+
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+    }
+
+    .contributor_person {
+      color: rgba(166, 166, 166, 1);
+      font-size: 14px;
+
+      .contributor_person_left {
+        margin-right: 5px;
+      }
+    }
+
+    .time {
+      color: rgba(166, 166, 166, 1);
+      font-size: 14px;
+    }
+  }
+
+  .line_split {
+    height: 0.5px;
+    background: rgba(166, 166, 166, 1);
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  .ways_list{
+      .way{
+        display: flex;
+        align-items: center;
+        width:100%;
+        padding-left:13px;
+        padding-top:13px;
+        Image{
+            width:39px;
+            height:39px;
+            border-radius:50%;
+            -webkit-border-radius:50%;
+            -moz-border-radius:50%;
+            -ms-border-radius:50%;
+            -o-border-radius:50%;
+            margin-right:13px;
+        }
+        .way_right{
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            justify-content: space-between;
+            padding-bottom: 13px;
+            padding-right: 13px;
+            border-bottom: 0.5px solid #a6a6a6;
+
+        }
+        .peopleInfo{
+            .name{
+                color: rgba(51, 51, 51, 1);
+                 font-size: 16px;
+                 margin-right:15px;
+            }
+            .use_way{
+                color: rgba(51, 51, 51, 1);
+                font-size: 16px;
+            }
+            .time_to_now{
+                color: rgba(128, 128, 128, 1);
+                font-size: 14px;
+                margin-right:13px;
+            }
+            .reply{
+                color: rgba(128, 128, 128, 1);
+                font-size: 14px;
+            }
+        }
+      }
+     
+
+  }
+}

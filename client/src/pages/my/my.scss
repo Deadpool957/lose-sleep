@@ -1,0 +1,94 @@
+.user_info{
+    width:100%;
+    margin-top:20px;
+  
+    .atavator{
+        width:100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 13px;
+        .at-avatar{
+            width:64px;
+            height:64px;
+        }
+    }
+    .user_info_edit{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 7px;
+        .at-input{
+            padding:0px;
+            margin:0px;
+            width: auto;
+            margin-right: 6px;
+            input{
+                padding:0px;
+                margin:0px;
+                font-size:17px;
+                line-height:normal;
+                height:auto;
+                min-height: auto;
+                width:53px;
+                color:#000;
+            }
+        }
+    }
+    .fork{
+        padding:12px 0px 12px 0px;
+        margin-left: 12px;
+        margin-right: 12px;
+        position: relative;
+        border-top:0.5px solid #ccc;
+        border-bottom: 0.5px solid #ccc;
+        display: flex;
+        align-items: center;
+        .me_fork{
+           width:50%;
+           padding-left: 52px;
+           .me_fork_nums{
+               color: #383838;
+               font-size:14px;
+               margin-right: 5px;
+           }
+           &:nth-of-type(1){
+               border-right:0.5px solid #ccc;
+           }
+           .me_fork_title{
+               color:#a6a6a6;
+               font-size:12px;
+           }
+        }
+        .fork_line{
+            position: absolute;
+            left:50%;
+            top:12px;
+            width: 0.5px;
+            height:30px;
+            background:#ccc;
+        }
+    }
+    
+    .edit_user_list{
+        margin-left: 12px;
+        margin-right: 12px;
+        .at-input{
+            padding:0px;
+            margin: 0px;
+            line-height:48px;
+            .at-input__title{
+                margin: 0px;
+                font-size:15px;
+                color: #000;
+                line-height:48px;
+            }
+            .at-icon{
+                font-size:17px;
+                color: #8a8686;
+                padding: 0px;
+            }
+        }
+       
+
+    }
+}

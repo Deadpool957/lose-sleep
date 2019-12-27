@@ -29,17 +29,32 @@ export default class Index extends Component {
          {
            'name':'在这里放入微信热榜推荐的文章',
             'user':'微信娱乐',
-            'time':"刚刚"
+            'time':"刚刚",
+            'img':defaultImg
          },
          {
           'name':'在这里放入微信热榜推荐的文章',
            'user':'微信娱乐',
-           'time':"刚刚"
+           'time':"刚刚",
+           'img':defaultImg
         },
         {
           'name':'在这里放入微信热榜推荐的文章',
            'user':'微信娱乐',
-           'time':"刚刚"
+           'time':"刚刚",
+           'img':defaultImg
+        },
+        {
+          'name':'在这里放入微信热榜推荐的文章',
+           'user':'微信娱乐',
+           'time':"刚刚",
+           'img':defaultImg
+        },
+        {
+          'name':'在这里放入微信热榜推荐的文章',
+           'user':'微信娱乐',
+           'time':"刚刚",
+           'img':defaultImg
         }
        ]
     }
@@ -72,15 +87,24 @@ onChange (value){
             return (<View key={index} class='hotItem'>{item}</View>)
             })}
           </View>
-          <View class='arctilelist'> 
-              <View class='arcctleleft'>
-                <View class='top'>在这里放入微信热榜推荐文章</View>
-                <View class='bottom'><Text>微信娱乐</Text><Text>刚刚</Text></View>
+          <View>
+            {
+              this.state.arctleList.map((item,index)=>{
+                return (
+                  <View class='arctilelist' key={index}> 
+                  <View class='arcctleleft'>
+                <View class='top'>{item.name}</View>
+              <View class='bottom'><Text class='userName'>{item.user}</Text><Text>{item.time}</Text></View>
+                  </View>
+                  <View class='articleright'>
+                    <Image  src={item.img} />
+                  </View>
               </View>
-              <View class='articleright'>
-                <Image  src={defaultImg} />
-              </View>
+                )
+              })
+            }
           </View>
+          
       </View>
     )
   }
