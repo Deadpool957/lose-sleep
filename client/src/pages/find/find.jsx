@@ -30,7 +30,7 @@ export default class Index extends Component {
            'name':'在这里放入微信热榜推荐的文章',
             'user':'微信娱乐',
             'time':"刚刚",
-            'img':defaultImg
+            'img':defaultImg,
          },
          {
           'name':'在这里放入微信热榜推荐的文章',
@@ -65,7 +65,30 @@ onChange (value){
     searchValue:value
   })
 }
-  componentWillMount () { }
+  componentWillMount () {
+    wx.cloud.init({
+      env:"test"
+    })
+
+    this.loadArticle()
+
+   }
+
+   loadArticle(){
+    const db = wx.cloud.database()
+    const result = db.collection("article").get().then(
+      res =>{
+        console.log("artile",res)
+        this.setState({
+          arctleList:res.data
+        })
+      }
+    )
+    .catch(err => {
+      console.log(err)
+    })
+    console.log(result)
+  }
 
   componentDidMount () { }
 
