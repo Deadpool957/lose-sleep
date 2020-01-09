@@ -1,5 +1,9 @@
 {
   "dependencies": {
-    "eslint-plugin-taro": "^2.0.0-beta.8"
+    "@tarojs/async-await": "^2.0.0-beta.13",
+    "@tarojs/redux": "^2.0.0-beta.13",
+    "eslint-plugin-taro": "^2.0.0-beta.8",
+    "redux": "^4.0.5",
+    "wx-server-sdk": "^1.7.1"
   }
 }

@@ -1,0 +1,2 @@
+export const USERINFO = 'USERINFO'
+export const FOLLOW_REFRESH = "FOLLOW_REFRESH"

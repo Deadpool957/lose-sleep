@@ -32,7 +32,7 @@ export default class Login extends Component {
   render() {
     return (
       <View className='index'>
-        <Button onClick={this.getLogin}>首页</Button>
+        <Button onClick={this.getLogin}>获取用户信息</Button>
         <Text>context：{JSON.stringify(this.state.context)}</Text>
       </View>
     )

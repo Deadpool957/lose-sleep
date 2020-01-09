@@ -59,6 +59,7 @@ export default class Index extends Component {
   }
   render() {
     return (
+
       <View className='index'>
         <View class='reasons'>选择你失眠的理由</View>
         <View class='reasomn_items'>{this.state.list.map((item, key) => {
