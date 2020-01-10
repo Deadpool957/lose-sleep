@@ -1,8 +1,19 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import './index.scss'
+import {connect} from "@tarojs/redux"
 
-export default class Index extends Component {
+const mapStateToProps = state => {
+  return {
+    searchValue: state.searchValue,
+  }};
+
+const mapDispatchToProps = dispatch => ({
+  onLoad: (payload) =>
+    dispatch({ type: "", payload}),
+});
+
+class Index extends Component {
 
   // eslint-disable-next-line react/sort-comp
   config = {
@@ -72,3 +83,4 @@ export default class Index extends Component {
     )
   }
 }
+export default connect(mapStateToProps,mapDispatchToProps)(Index);

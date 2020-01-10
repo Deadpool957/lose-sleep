@@ -1,13 +1,28 @@
 import Taro, { Component } from '@tarojs/taro'
 import { AtSearchBar } from 'taro-ui'
-import { View, Text,Image} from '@tarojs/components'
+import { View, Text,Image, Form} from '@tarojs/components'
+import {connect} from '@tarojs/redux'
 import './find.scss'
 // eslint-disable-next-line no-unused-vars
 // eslint-disable-next-line import/first
 import defaultImg from '../../assets/pages/1.jpg'
+import {LOADARTICLE,SEARCHWORDS} from '../../constants/article'
 
 
-export default class Index extends Component {
+const mapStateToProps = state => {
+  return {
+    searchValue: state.searchValue,
+    hotWords:state.hotWords,
+    arctleList:state.arctleList,
+  }};
+
+const mapDispatchToProps = dispatch => ({
+  onLoad: (payload) =>
+    dispatch({ type: LOADARTICLE, payload}),
+});
+
+
+class Index extends Component {
 
   // eslint-disable-next-line react/sort-comp
   config = {
@@ -19,7 +34,6 @@ export default class Index extends Component {
       // eslint-disable-next-line react/no-unused-state
       searchValue:'',
       // eslint-disable-next-line react/no-unused-state
-      defaultImg:defaultImg,
        // eslint-disable-next-line react/no-unused-state
        hotwords:[
          '失眠','失眠','失眠','失眠','失眠'
@@ -27,7 +41,7 @@ export default class Index extends Component {
        // eslint-disable-next-line react/no-unused-state
        arctleList:[
          {
-           'name':'在这里放入微信热榜推荐的文章',
+           'title':'在这里放入微信热榜推荐的文章',
             'user':'微信娱乐',
             'time':"刚刚",
             'img':defaultImg,
@@ -59,35 +73,35 @@ export default class Index extends Component {
        ]
     }
   }
-onChange (value){
-  this.setState({
-    // eslint-disable-next-line react/no-unused-state
-    searchValue:value
-  })
+  onChange (value){
+      this.setState({
+      // eslint-disable-next-line react/no-unused-state
+      searchValue:value
+      })
 }
   componentWillMount () {
-    wx.cloud.init({
-      env:"test"
-    })
-
+  //  this.loadArticle()
     this.loadArticle()
+  
 
    }
 
    loadArticle(){
-    const db = wx.cloud.database()
-    const result = db.collection("article").get().then(
+    const db = Taro.cloud.database({
+      env:"test-3975e"
+    })
+    db.collection("article").where({}).get().then(
       res =>{
         console.log("artile",res)
-        this.setState({
-          arctleList:res.data
-        })
+        // this.setState({
+        //   arctleList:res.data
+        // })
+        this.props.onLoad(res)
       }
     )
     .catch(err => {
-      console.log(err)
+      console.log("-----",err)
     })
-    console.log(result)
   }
 
   componentDidMount () { }
@@ -116,7 +130,7 @@ onChange (value){
                 return (
                   <View class='arctilelist' key={index}> 
                   <View class='arcctleleft'>
-                <View class='top'>{item.name}</View>
+                <View class='top'> {item.title}</View>
               <View class='bottom'><Text class='userName'>{item.user}</Text><Text>{item.time}</Text></View>
                   </View>
                   <View class='articleright'>
@@ -132,3 +146,4 @@ onChange (value){
     )
   }
 }
+export default connect(mapStateToProps,mapDispatchToProps)(Index);

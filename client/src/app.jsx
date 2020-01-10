@@ -1,7 +1,7 @@
 import '@tarojs/async-await'
 import { Provider } from '@tarojs/redux'
 import Taro, { Component } from '@tarojs/taro'
-import Index from './pages/index/index/index'
+import Index from './pages/index/index'
 import { get as getGlobalData, set as setGlobalData,globalData} from './utils/global_data'
 import './app.scss'
 import configStore from './store'
@@ -68,18 +68,16 @@ class App extends Component {
   }
 
   componentDidMount() {
-    wx.cloud.init({
-      env:'test'  
-    }) 
     if (process.env.TARO_ENV === 'weapp') {
-      Taro.cloud.init()
-    }
-    Taro.cloud.init({
-      env: "test",
-      traceUser: true
+      Taro.cloud.init({
+        env: "test-3975e",
+        traceUser: true
     })
+    }
     this.loadOpenId()
   }
+
+
 
   loadOpenId(){
     Taro.cloud.callFunction({
@@ -93,7 +91,7 @@ class App extends Component {
       }
       console.log('----open---',openId)
     }).catch(err=>{
-      console.log("opendi err",err)
+      console.log("- load open id-- err",err)
     })
   }
 
