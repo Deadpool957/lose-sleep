@@ -1,24 +1,25 @@
 import Taro, { Component } from '@tarojs/taro'
 import { AtSearchBar } from 'taro-ui'
-import { View, Text,Image, Form} from '@tarojs/components'
-import {connect} from '@tarojs/redux'
+import { View, Text, Image, Form } from '@tarojs/components'
+import { connect } from '@tarojs/redux'
 import './find.scss'
 // eslint-disable-next-line no-unused-vars
 // eslint-disable-next-line import/first
-import defaultImg from '../../assets/pages/1.jpg'
-import {LOADARTICLE,SEARCHWORDS} from '../../constants/article'
+import { LOADARTICLE, SEARCHWORDS } from '../../constants/article'
 
 
 const mapStateToProps = state => {
+  console.log("-----11111111111111-map state to props----",state)
   return {
-    searchValue: state.searchValue,
-    hotWords:state.hotWords,
-    arctleList:state.arctleList,
-  }};
+    searchValue: state.article.searchValue,
+    hotWords: state.article.hotWords,
+    arctleList: state.article.arctleList,
+  }
+};
 
 const mapDispatchToProps = dispatch => ({
   onLoad: (payload) =>
-    dispatch({ type: LOADARTICLE, payload}),
+    dispatch({ type: LOADARTICLE, payload }),
 });
 
 
@@ -28,122 +29,88 @@ class Index extends Component {
   config = {
     navigationBarTitleText: '失眠狒话'
   }
-  constructor(){
-    super(...arguments)
-    this.state = {
+  // constructor(props) {
+  //   super(...arguments)  
+  //   this.props = props
+  // }
+  onChange(value) {
+    this.setState({
       // eslint-disable-next-line react/no-unused-state
-      searchValue:'',
-      // eslint-disable-next-line react/no-unused-state
-       // eslint-disable-next-line react/no-unused-state
-       hotwords:[
-         '失眠','失眠','失眠','失眠','失眠'
-       ],
-       // eslint-disable-next-line react/no-unused-state
-       arctleList:[
-         {
-           'title':'在这里放入微信热榜推荐的文章',
-            'user':'微信娱乐',
-            'time':"刚刚",
-            'img':defaultImg,
-         },
-         {
-          'name':'在这里放入微信热榜推荐的文章',
-           'user':'微信娱乐',
-           'time':"刚刚",
-           'img':defaultImg
-        },
-        {
-          'name':'在这里放入微信热榜推荐的文章',
-           'user':'微信娱乐',
-           'time':"刚刚",
-           'img':defaultImg
-        },
-        {
-          'name':'在这里放入微信热榜推荐的文章',
-           'user':'微信娱乐',
-           'time':"刚刚",
-           'img':defaultImg
-        },
-        {
-          'name':'在这里放入微信热榜推荐的文章',
-           'user':'微信娱乐',
-           'time':"刚刚",
-           'img':defaultImg
-        }
-       ]
-    }
+      searchValue: value
+    })
   }
-  onChange (value){
-      this.setState({
-      // eslint-disable-next-line react/no-unused-state
-      searchValue:value
-      })
-}
-  componentWillMount () {
-  //  this.loadArticle()
+  componentWillMount() {
+    console.log('222222222222222222',this.props)
+    //  this.loadArticle()
     this.loadArticle()
-  
 
-   }
 
-   loadArticle(){
+  }
+  componentDidMount() {
+    console.log('333333333333333333',this)
+    // this.loadArticle()
+  }
+
+  loadArticle() {
+    // console.log("0----------------------",this.props)
     const db = Taro.cloud.database({
-      env:"test-3975e"
+      env: "test-3975e"
     })
     db.collection("article").where({}).get().then(
-      res =>{
-        console.log("artile",res)
+      res => {
+        // console.log("artile", res)
         // this.setState({
         //   arctleList:res.data
         // })
         this.props.onLoad(res)
       }
-    )
-    .catch(err => {
-      console.log("-----",err)
-    })
+    ).catch(err => {
+        console.log("-----", err)
+      })
   }
 
-  componentDidMount () { }
 
-  componentWillUnmount () { }
 
-  componentDidShow () { }
+  componentWillUnmount() { }
 
-  componentDidHide () { }
+  componentDidShow() { }
 
-  render () {
+  componentDidHide() { }
+
+  render() {
+    this.loadArticle()
+    console.log("-----------this. render----------",this.props)
     return (
       <View className='find'>
-          <View class='searchItems'>
-            <AtSearchBar value={this.state.searchValue} onChange={this.onChange.bind(this)}  actionName='搜索' />
-          </View>
-          <View class='searchHot'>热门搜索</View>
-          <View class='hotwords'>
-            {this.state.hotwords.map((item,index)=>{
+        <View class='searchItems'>
+          <AtSearchBar value={this.props.searchValue}  actionName='搜索' />
+        </View>
+        <View class='searchHot'>热门搜索</View>
+        <View class='hotwords'>
+          {this.props.hotwords.map((item, index) => {
             return (<View key={index} class='hotItem'>{item}</View>)
-            })}
-          </View>
-          <View>
-            {
-              this.state.arctleList.map((item,index)=>{
-                return (
-                  <View class='arctilelist' key={index}> 
+          })}
+        </View>
+        <View>
+          {
+            this.props.articleList.map((item, index) => {
+              return (
+                <View class='arctilelist' key={index}>
                   <View class='arcctleleft'>
-                <View class='top'> {item.title}</View>
-              <View class='bottom'><Text class='userName'>{item.user}</Text><Text>{item.time}</Text></View>
+                    <View class='top'> {item.title}</View>
+                    <View class='bottom'><Text class='userName'>{item.user}</Text><Text>{item.time}</Text></View>
                   </View>
                   <View class='articleright'>
-                    <Image  src={item.img} />
+                    <Image src={item.img} />
                   </View>
-              </View>
-                )
-              })
-            }
-          </View>
-          
+                </View>
+              )
+            })
+          }
+        </View>
+
       </View>
     )
   }
 }
-export default connect(mapStateToProps,mapDispatchToProps)(Index);
+export default connect(mapStateToProps, mapDispatchToProps)(Index);
