@@ -47,7 +47,7 @@ class Index extends Component {
 
   }
   componentDidMount() {
-    console.log('333333333333333333',this)
+    console.log('333333333333333333',this.props)
     // this.loadArticle()
   }
 
@@ -71,14 +71,16 @@ class Index extends Component {
 
 
 
-  componentWillUnmount() { }
+  componentWillUnmount() { 
+    let xa = "acceds"
+    console.log(xa)
+  }
 
   componentDidShow() { }
 
   componentDidHide() { }
 
   render() {
-    this.loadArticle()
     console.log("-----------this. render----------",this.props)
     return (
       <View className='find'>
@@ -113,4 +115,5 @@ class Index extends Component {
     )
   }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(Index);

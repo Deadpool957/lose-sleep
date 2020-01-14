@@ -6,11 +6,11 @@ import {
 
 const INITAL_STATE = {
     // eslint-disable-next-line react/no-unused-state
-      searchValue:'大哥大',
+      searchValue:'你搜我?',
       // eslint-disable-next-line react/no-unused-state
        // eslint-disable-next-line react/no-unused-state
        hotwords:[
-         '失眠','失眠','失眠','失眠','失眠'
+         '琅丹','失眠','失眠','失眠','失眠'
        ],
        // eslint-disable-next-line react/no-unused-state
        articleList:[]
