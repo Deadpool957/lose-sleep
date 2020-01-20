@@ -1,10 +1,10 @@
 import '@tarojs/async-await'
 import { Provider } from '@tarojs/redux'
 import Taro, { Component } from '@tarojs/taro'
-import Index from './pages/index/index/index'
+import Index from './pages/index/index'
 import { get as getGlobalData, set as setGlobalData,globalData} from './utils/global_data'
 import './app.scss'
-import configStore from './store'
+import store  from './store'
 
 // eslint-disable-next-line import/first
 import 'taro-ui/dist/style/index.scss'
@@ -14,7 +14,7 @@ import { getWXContext } from 'wx-server-sdk'
 // if (process.env.NODE_ENV !== 'production' && process.env.TARO_ENV === 'h5')  {
 //   require('nerv-devtools')
 // }
-const store = configStore
+// const store = configStore
 class App extends Component {
 
   // eslint-disable-next-line react/sort-comp
@@ -78,8 +78,11 @@ class App extends Component {
       env: "dev-zc3oa",
       traceUser: true
     })
+    }
     this.loadOpenId()
   }
+
+
 
   loadOpenId(){
     Taro.cloud.callFunction({
@@ -93,7 +96,7 @@ class App extends Component {
       }
       console.log('----open---',openId)
     }).catch(err=>{
-      console.log("opendi err",err)
+      console.log("- load open id-- err",err)
     })
   }
 

@@ -1,0 +1,2 @@
+export const LOADARTICLE = "LOADARTICLE"
+export const SEARCHWORDS = "SEARCHWORDS"

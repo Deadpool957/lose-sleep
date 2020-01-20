@@ -2,7 +2,7 @@ const cloud = require('wx-server-sdk')
 
 cloud.init()
 const db = cloud.database({
-  env: "test"
+  env: "test-3975e"
 })
 const userCollection = db.collection("user")
 
