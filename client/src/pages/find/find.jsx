@@ -67,7 +67,7 @@ onChange (value){
 }
   componentWillMount () {
     wx.cloud.init({
-      env:"test"
+      env:"dev-zc3oa"
     })
 
     this.loadArticle()
@@ -75,8 +75,16 @@ onChange (value){
    }
 
    loadArticle(){
+     wx.cloud.callFunction({
+       name:"article_get",
+       data:{},
+       success:res=>{
+         console.log(res,"返回结果")
+       },
+       fail:err=>{console.log(err)}
+     })
     const db = wx.cloud.database()
-    const result = db.collection("article").get().then(
+    const result = db.collection("Article").get().then(
       res =>{
         console.log("artile",res)
         this.setState({
@@ -114,7 +122,7 @@ onChange (value){
             {
               this.state.arctleList.map((item,index)=>{
                 return (
-                  <View class='arctilelist' key={index}> 
+                  <View class='arctilelist' key={index}>
                   <View class='arcctleleft'>
                 <View class='top'>{item.name}</View>
               <View class='bottom'><Text class='userName'>{item.user}</Text><Text>{item.time}</Text></View>
@@ -127,7 +135,7 @@ onChange (value){
               })
             }
           </View>
-          
+
       </View>
     )
   }

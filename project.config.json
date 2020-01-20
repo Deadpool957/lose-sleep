@@ -3,7 +3,7 @@
 	"cloudfunctionRoot": "cloud/functions/",
 	"projectname": "lose-sleep",
 	"description": "吐槽发言社区",
-	"appid": "wx6bb3898abe6916fe",
+	"appid": "wx949df23f9d3470b8",
 	"setting": {
 		"urlCheck": true,
 		"es6": true,

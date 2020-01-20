@@ -3,9 +3,9 @@ const cloud = require('wx-server-sdk')
 cloud.init()
 
 const db = cloud.database({
-  env: "test"
+  env: "dev-zc3oa"
 })
-const articleCollection = db.collection("article")
+const articleCollection = db.collection("Article")
 
 // 云函数入口函数
 exports.main = async (event, context) => {

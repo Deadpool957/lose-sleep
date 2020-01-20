@@ -69,13 +69,13 @@ class App extends Component {
 
   componentDidMount() {
     wx.cloud.init({
-      env:'test'  
-    }) 
+      env:'dev-zc3oa'
+    })
     if (process.env.TARO_ENV === 'weapp') {
       Taro.cloud.init()
     }
     Taro.cloud.init({
-      env: "test",
+      env: "dev-zc3oa",
       traceUser: true
     })
     this.loadOpenId()
