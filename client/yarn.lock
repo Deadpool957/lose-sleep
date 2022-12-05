@@ -66,6 +66,12 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
+"@babel/runtime@^7.9.2":
+  version "7.20.6"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.20.6.tgz#facf4879bfed9b5326326273a64220f099b0fce3"
+  dependencies:
+    regenerator-runtime "^0.13.11"
+
 "@babel/template@7.0.0-beta.44":
   version "7.0.0-beta.44"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.0.0-beta.44.tgz#f8832f4fdcee5d59bf515e595fc5106c529b394f"
@@ -186,6 +192,22 @@
   dependencies:
     uglify-js "^3.3.24"
 
+"@tarojs/redux-h5@^2.0.1":
+  version "2.2.10"
+  resolved "https://registry.yarnpkg.com/@tarojs/redux-h5/-/redux-h5-2.2.10.tgz#025a22a68d016d4ba181c32b430c598e6e0705bf"
+  dependencies:
+    hoist-non-react-statics "^2.5.0"
+    invariant "^2.2.4"
+    loose-envify "^1.1.0"
+    prop-types "^15.6.1"
+
+"@tarojs/redux@^2.0.1":
+  version "2.2.10"
+  resolved "https://registry.yarnpkg.com/@tarojs/redux/-/redux-2.2.10.tgz#63b1ee7cd123c17aa67d71d6d5ae8ce6ef6eacea"
+  dependencies:
+    "@tarojs/taro" "^2.2.10"
+    "@tarojs/utils" "^2.2.10"
+
 "@tarojs/router@2.0.1":
   version "2.0.1"
   resolved "https://registry.npm.taobao.org/@tarojs/router/download/@tarojs/router-2.0.1.tgz#6399961337da04f06e5e4026486c44c7b77ac9f6"
@@ -273,6 +295,12 @@
   dependencies:
     "@tarojs/utils" "2.0.1"
 
+"@tarojs/taro@^2.2.10":
+  version "2.2.19"
+  resolved "https://registry.yarnpkg.com/@tarojs/taro/-/taro-2.2.19.tgz#4ba0b068fef8485b104e856d3d5e058b0700c041"
+  dependencies:
+    "@tarojs/utils" "2.2.19"
+
 "@tarojs/transformer-wx@2.0.1":
   version "2.0.1"
   resolved "https://registry.npm.taobao.org/@tarojs/transformer-wx/download/@tarojs/transformer-wx-2.0.1.tgz#246ab60d17df4be3d8352160912361b4b4bfd5e7"
@@ -306,6 +334,14 @@
 "@tarojs/utils@2.0.1":
   version "2.0.1"
   resolved "https://registry.npm.taobao.org/@tarojs/utils/download/@tarojs/utils-2.0.1.tgz#54dbee464a0bff91b79556b5bfbf12dede0f4064"
+
+"@tarojs/utils@2.2.19":
+  version "2.2.19"
+  resolved "https://registry.yarnpkg.com/@tarojs/utils/-/utils-2.2.19.tgz#738c27885bb48d6073538a92a316572b8920118e"
+
+"@tarojs/utils@^2.2.10":
+  version "2.2.10"
+  resolved "https://registry.yarnpkg.com/@tarojs/utils/-/utils-2.2.10.tgz#ddf82a77aeccfc315c2fb78b3d1c079860aed350"
 
 "@tarojs/webpack-runner@2.0.1":
   version "2.0.1"
@@ -2702,8 +2738,12 @@ decamelize@^2.0.0:
     xregexp "4.0.0"
 
 decode-uri-component@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.2.tgz#e69dbe25d37941171dd540e024c444cd5188e1e9"
+
+deep-diff@^0.3.5:
+  version "0.3.8"
+  resolved "https://registry.yarnpkg.com/deep-diff/-/deep-diff-0.3.8.tgz#c01de63efb0eec9798801d40c7e0dae25b582c84"
 
 deep-equal@^1.0.1:
   version "1.1.1"
@@ -3944,6 +3984,10 @@ hmac-drbg@^1.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
+hoist-non-react-statics@^2.5.0:
+  version "2.5.5"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
+
 home-or-tmp@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/home-or-tmp/-/home-or-tmp-2.0.0.tgz#e36c3f2d2cae7d746a857e38d18d5f32a7882db8"
@@ -4247,7 +4291,7 @@ intersection-observer@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/intersection-observer/-/intersection-observer-0.7.0.tgz#ee16bee978db53516ead2f0a8154b09b400bbdc9"
 
-invariant@2.2.4, invariant@^2.2.0, invariant@^2.2.2:
+invariant@2.2.4, invariant@^2.2.0, invariant@^2.2.2, invariant@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
   dependencies:
@@ -4874,7 +4918,7 @@ loglevelnext@^1.0.1:
     es6-symbol "^3.1.1"
     object.assign "^4.1.0"
 
-loose-envify@^1.0.0, loose-envify@^1.4.0:
+loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   dependencies:
@@ -6272,6 +6316,22 @@ redent@^1.0.0:
     indent-string "^2.1.0"
     strip-indent "^1.0.1"
 
+redux-logger@^3.0.6:
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/redux-logger/-/redux-logger-3.0.6.tgz#f7555966f3098f3c88604c449cf0baf5778274bf"
+  dependencies:
+    deep-diff "^0.3.5"
+
+redux-thunk@^2.3.0:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.4.2.tgz#b9d05d11994b99f7a91ea223e8b04cf0afa5ef3b"
+
+redux@^4.0.5:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/redux/-/redux-4.2.0.tgz#46f10d6e29b6666df758780437651eeb2b969f13"
+  dependencies:
+    "@babel/runtime" "^7.9.2"
+
 regenerate@^1.2.1:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.4.0.tgz#4a856ec4b56e4077c557589cae85e7a4c8869a11"
@@ -6279,6 +6339,10 @@ regenerate@^1.2.1:
 regenerator-runtime@^0.11.0:
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
+
+regenerator-runtime@^0.13.11:
+  version "0.13.11"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.11.tgz#f6dca3e7ceec20590d07ada785636a90cdca17f9"
 
 regenerator-runtime@^0.13.2:
   version "0.13.3"
